@@ -2,9 +2,10 @@ import * as usersDao from "./users-dao.js";
 
 
 const AuthController = (app) => {
- const register = (req, res) => { 
     const register = (req, res) => {
         const username = req.body.username;
+        console.log(username);
+        console.log(req.body);
         const user = usersDao.findUserByUsername(username);
         if (user) {
           res.sendStatus(409);
@@ -14,7 +15,6 @@ const AuthController = (app) => {
         req.session["currentUser"] = newUser;
         res.json(newUser);
       };     
- };
  const login    = (req, res) => { 
     const login = (req, res) => {
         const username = req.body.username;
