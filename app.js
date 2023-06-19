@@ -5,6 +5,10 @@ import TuitsController from './controllers/tuits/tuits-controller.js';
 import cors from 'cors'
 import session from "express-session";
 import AuthController from './users/auth-controller.js';
+import mongoose from "mongoose";
+
+mongoose.connect("mongodb+srv://brianhugar:NThLo8ZVcAbofSyR@cluster0.fggjpjr.mongodb.net/tuiter?retryWrites=true&w=majority");
+
 const app = express()
 app.use(
     session({
